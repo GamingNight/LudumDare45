@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3362344619336840452}
   - component: {fileID: 3362344619336840455}
   m_Layer: 0
-  m_Name: VMobilePeakSupport
+  m_Name: HMobilePeakSupport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3362344619336840452
 Transform:
   m_ObjectHideFlags: 0
