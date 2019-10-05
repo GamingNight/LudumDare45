@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+
+    public Vector2 initPosition;
     public float maxSpeed = 7f;
     public float minGroundNormalY = 0.65f;
     public float jumpTakeOffSpeed = 7f;
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour {
         jump = false;
         slowJump = false;
         jumpInputTimer = 0f;
+    }
+
+    public void ResetPosition() {
+
+        transform.position = initPosition;
     }
 
     void Update() {

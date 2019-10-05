@@ -13,9 +13,12 @@ public class GameManager : MonoBehaviour {
     private int blueCoinCount;
     private int greenCoinCount;
     private int yellowCoinCount;
+
     public GameObject platformContainer;
     public GameObject peakContainer;
     public GameObject mobilePeakContainer;
+    public GameObject coinContainer;
+    public GameObject player;
 
     private void Awake() {
         if (instance == null) {
@@ -76,6 +79,14 @@ public class GameManager : MonoBehaviour {
 
         foreach (Transform mPeak in mobilePeakContainer.transform) {
             mPeak.gameObject.SetActive(value);
+        }
+    }
+
+    public void ResetGame() {
+        player.GetComponent<PlayerController>().ResetPosition();
+        player.GetComponent<PlayerDeathManager>().ResetSave();
+        foreach (Transform t in coinContainer.transform) {
+            t.GetComponent<Coin>().resetPickUp();
         }
     }
 }

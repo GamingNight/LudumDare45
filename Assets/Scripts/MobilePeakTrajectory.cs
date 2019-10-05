@@ -12,7 +12,6 @@ public class MobilePeakTrajectory : MonoBehaviour {
 
 
     private float currentPosition;
-    private float sleepTime;
     private bool fromMinToStart;
     private float waitTime;
 
@@ -26,7 +25,6 @@ public class MobilePeakTrajectory : MonoBehaviour {
 
     void Init() {
         currentPosition = startPositionPercentage;
-        sleepTime = 0;
         fromMinToStart = startFromMinToStart;
         waitTime = -1;
     }
