@@ -13,17 +13,25 @@ public class Coin : MonoBehaviour {
     public Sprite spriteGreen;
 
     public CoinColor color = CoinColor.RED;
+    public bool activated = true;
 
     void Start() {
         Sprite coinSprite = GetComponent<SpriteRenderer>().sprite;
-        if (color == CoinColor.RED) {
+        switch (color) {
+        case Coin.CoinColor.RED:
             coinSprite = spriteRed;
-        } else if (color == CoinColor.BLUE) {
+            break;
+        case Coin.CoinColor.BLUE:
             coinSprite = spriteBlue;
-        } else if (color == CoinColor.YELLOW) {
+            break;
+        case Coin.CoinColor.YELLOW:
             coinSprite = spriteYellow;
-        } else if (color == CoinColor.GREEN) {
+            break;
+        case Coin.CoinColor.GREEN:
             coinSprite = spriteGreen;
+            break;
+        default:
+            break;
         }
     }
 
@@ -32,8 +40,16 @@ public class Coin : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        //Debug.Log("coin.OnTriggerEnter2D");
+        //Debug.Log(" activated = false");
+        if (!activated) 
+            return;
+
+        //Debug.Log(" activated = true");
+        
+        GameManager.Instance().UpdateCoinCount(color);
         if (col.gameObject.tag == "Player") {
+            activated = false;
+            // the destroy must be done later by the gamemanager
             Destroy (gameObject);
         }
     }
