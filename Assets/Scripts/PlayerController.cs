@@ -1,0 +1,160 @@
+﻿using UnityEngine;
+
+public class PlayerController : MonoBehaviour {
+    public float maxSpeed = 7f;
+    public float minGroundNormalY = 0.65f;
+    public float jumpTakeOffSpeed = 7f;
+
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rgbd2D;
+
+    private ContactFilter2D contactFilter;
+    private RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
+
+    private Vector2 velocity;
+    private Vector2 wallReaction;
+    private bool grounded;
+    private Vector2 groundNormal;
+    private bool jump;
+    private bool slowJump;
+    private bool updateJumpVelocity;
+
+    private const float minMoveDistance = 0.001f;
+    private const float shellRadius = 0.01f;
+
+    void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rgbd2D = GetComponent<Rigidbody2D>();
+
+        contactFilter.useTriggers = false;
+        contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
+        contactFilter.useLayerMask = true;
+
+        grounded = true;
+        jump = false;
+        slowJump = false;
+        updateJumpVelocity = true;
+    }
+
+    void FixedUpdate() {
+
+        Vector2 inputVelocity = Vector2.zero;
+        inputVelocity += ComputeJumpVelocity();
+        inputVelocity += ComputeWalkVelocity();
+
+        velocity = inputVelocity;
+
+        //Apply gravity to velocity
+        velocity += Physics2D.gravity * Time.deltaTime;
+
+        //Remove wall and ceil reactions to velocity
+        velocity += wallReaction;
+
+        //Convert velocity into a position shift
+        Vector2 deltaPosition = velocity * Time.deltaTime;
+
+
+        //Compte movement along ground
+        Vector2 directionAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
+        Vector2 movementAlongGround = directionAlongGround * deltaPosition.x;
+        Move(movementAlongGround, false);
+
+        //compute movement along gravity
+        Vector2 antiGravity = -Physics2D.gravity;
+        Vector2 movementAlongGravity = antiGravity * deltaPosition.y;
+        Move(movementAlongGravity, true);
+
+        //Apply ground friction if grounded
+        ApplyGroundFriction();
+    }
+
+    private Vector2 ComputeWalkVelocity() {
+
+        float h = Input.GetAxis("Horizontal");
+        Vector2 walkVelocity = Vector2.zero;
+        if (h != 0) {
+            walkVelocity.x = h * maxSpeed;
+        } else {
+            walkVelocity.x = velocity.x;
+        }
+
+        //Flip sprite if necessary
+        bool flipSprite = (spriteRenderer.flipX ? (h > 0f) : (h < 0f));
+        if (flipSprite) {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+        }
+
+        return walkVelocity;
+    }
+
+    private Vector2 ComputeJumpVelocity() {
+
+        Vector2 jumpVelocity = Vector2.zero;
+        bool jumpInputDown = Input.GetKeyDown(KeyCode.Space);
+        bool jumpInputUp = Input.GetKeyUp(KeyCode.Space);
+
+        //Register a jump entry 
+        if (jumpInputDown && grounded && !jump) {
+            jump = true;
+        }
+        //Register a jump release (slow down jump)
+        slowJump = jumpInputUp && velocity.y > 0;
+
+        if (updateJumpVelocity) {
+            updateJumpVelocity = false;
+        } else {
+            //Jump
+            if (jump) {
+                jumpVelocity.y = jumpTakeOffSpeed;
+                jump = false;
+            } else if (slowJump) {
+                jumpVelocity.y = velocity.y * 0.5f;
+            } else {
+                jumpVelocity.y = velocity.y;
+            }
+        }
+
+        return jumpVelocity;
+    }
+
+    //Compute movement in a 2Dplateformer-friendly way (doesn't use default RigidBody2D behavior)
+    private void Move(Vector2 movement, bool yMovement) {
+        float distance = movement.magnitude;
+
+        if (distance > minMoveDistance) {
+            grounded = false;
+            wallReaction = Vector2.zero;
+            int count = rgbd2D.Cast(movement, contactFilter, hitBuffer, distance + shellRadius);
+            for (int i = 0; i < count; i++) {
+                Vector2 currentNormal = hitBuffer[i].normal;
+                if (currentNormal.y > minGroundNormalY) {
+                    grounded = true;
+                    if (yMovement) {
+                        groundNormal = currentNormal;
+                        currentNormal.x = 0;
+                    }
+                }
+                float projection = Vector2.Dot(velocity, currentNormal);
+                if (projection < 0) {
+                    //If object hits a wall or a ceil, remove velocity in its direction.
+                    wallReaction -= projection * currentNormal;
+                }
+
+                float modifiedDistance = hitBuffer[i].distance - shellRadius;
+                distance = modifiedDistance < distance ? modifiedDistance : distance;
+            }
+        }
+
+        rgbd2D.position = rgbd2D.position + movement.normalized * distance;
+    }
+
+    private void ApplyGroundFriction() {
+        if (grounded) {
+            if (Mathf.Abs(velocity.x) > 0.01f) {
+                velocity.x *= 0.9f;
+            } else {
+                velocity.x = 0f;
+            }
+        }
+    }
+}
