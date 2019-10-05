@@ -53,20 +53,14 @@ public class GameManager : MonoBehaviour {
 
     void Update() {
 
-        switch (redCoinCount) {
-            case 1:
-                RevealPlatforms();
-                break;
-            case 2:
-                RevealPeaks();
-                break;
-            case 3:
-                RevealMobilePeaks();
-                break;
-            case 4:
-                break;
-            default:
-                break;
+        if (redCoinCount == 1) {
+            RevealPlatforms();
+        }
+        if (blueCoinCount == 1) {
+            RevealPeaks();
+        }
+        if (greenCoinCount == 1) {
+            RevealMobilePeaks();
         }
     }
 
