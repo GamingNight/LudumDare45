@@ -50,7 +50,7 @@ public class Coin : MonoBehaviour {
             GameManager.Instance().UpdateCoinCount(color);
             activated = false;
             // the destroy must be done later by the gamemanager
-            Destroy (gameObject)
+            Destroy(gameObject);
         }
     }
 
