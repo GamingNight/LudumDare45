@@ -5,13 +5,17 @@ public class PlayerDeathManager : MonoBehaviour {
     private Vector3 lastQuickSavePosition;
     public GameObject coinContainer;
 
+    public void ResetSave() {
+        lastQuickSavePosition = GetComponent<PlayerController>().initPosition;
+    }
+
     public void Die() {
         GetComponent<PlayerController>().ResetVelocity();
         transform.position = lastQuickSavePosition;
         foreach (Transform child in coinContainer.transform) {
             Coin coin = child.gameObject.GetComponent<Coin>();
             if (coin.GetStatus() == Coin.CoinStatus.PICKED_UP_NOT_SAVED) {
-                coin.revertPickUp();
+                coin.resetPickUp();
             }
         }
     }

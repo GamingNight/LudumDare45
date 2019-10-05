@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour {
     public CoinColor color = CoinColor.RED;
 
     private SpriteRenderer spriteRenderer;
-    private CoinStatus status;
+    private CoinStatus status = CoinStatus.NOT_PICKED_UP;
 
     void Start() {
 
@@ -68,9 +68,12 @@ public class Coin : MonoBehaviour {
         status = CoinStatus.PICKED_UP;
     }
 
-    public void revertPickUp() {
+    public void resetPickUp() {
+        if (status != CoinStatus.NOT_PICKED_UP) {
+            GameManager.Instance().AddCoinValue(color, -1);
+        }
         status = CoinStatus.NOT_PICKED_UP;
-        GameManager.Instance().AddCoinValue(color, -1);
+
     }
 
 }
