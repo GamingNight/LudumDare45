@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
         greenCoinCount = 0;
     }
 
-    public void UpdateCoinCount(Coin.CoinColor color) {
+    public void AddCoin(Coin.CoinColor color) {
 
         switch (color) {
             case Coin.CoinColor.RED:
