@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour {
     private void ApplyGroundFriction() {
         if (grounded) {
             if (Mathf.Abs(velocity.x) > 0.01f) {
-                velocity.x *= 0.9f;
+                velocity.x *= 0.1f;
             } else {
                 velocity.x = 0f;
             }
