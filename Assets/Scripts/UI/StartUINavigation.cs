@@ -7,7 +7,8 @@ public class StartUINavigation : MonoBehaviour {
     public Text start;
     public Text options;
     public Text quit;
-    public Image title;
+
+    public GameObject gameContainer;
 
     private int currentCursorValue;
     private float prevVerticalvalue;
@@ -67,6 +68,8 @@ public class StartUINavigation : MonoBehaviour {
     public void StartWithNothing() {
 
         gameObject.SetActive(false);
+        gameContainer.SetActive(true);
+
     }
 
     public void ShowOptions() {

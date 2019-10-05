@@ -242,7 +242,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405327445}
+      - m_Target: {fileID: 1541112523}
         m_MethodName: ShowOptions
         m_Mode: 1
         m_Arguments:
@@ -270,7 +270,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1405327445}
+        - m_Target: {fileID: 1541112523}
           m_MethodName: FocusCursorOnvalue
           m_Mode: 3
           m_Arguments:
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405327445}
+      - m_Target: {fileID: 1541112523}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -538,7 +538,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1405327445}
+        - m_Target: {fileID: 1541112523}
           m_MethodName: FocusCursorOnvalue
           m_Mode: 3
           m_Arguments:
@@ -899,8 +899,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405327445}
-        m_MethodName: ShowOptions
+      - m_Target: {fileID: 1541112523}
+        m_MethodName: StartWithNothing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -927,7 +927,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1405327445}
+        - m_Target: {fileID: 1541112523}
           m_MethodName: FocusCursorOnvalue
           m_Mode: 3
           m_Arguments:
@@ -950,7 +950,6 @@ GameObject:
   - component: {fileID: 1405327444}
   - component: {fileID: 1405327443}
   - component: {fileID: 1405327442}
-  - component: {fileID: 1405327445}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1042,23 +1041,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1405327445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405327440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6dedd7943176db44aa1a5d8c283d46c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursor: {fileID: 1917820575}
-  start: {fileID: 727374014}
-  options: {fileID: 36931161}
-  quit: {fileID: 251561951}
-  title: {fileID: 0}
 --- !u!1 &1473431729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,13 +1157,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541112522}
+  - component: {fileID: 1541112523}
   m_Layer: 0
   m_Name: StartUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1541112522
 Transform:
   m_ObjectHideFlags: 0
@@ -1197,6 +1180,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1541112523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541112521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dedd7943176db44aa1a5d8c283d46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 1917820575}
+  start: {fileID: 727374014}
+  options: {fileID: 36931161}
+  quit: {fileID: 251561951}
+  gameContainer: {fileID: 2024374878}
 --- !u!1 &1917820573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2024374879
 Transform:
   m_ObjectHideFlags: 0
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 2096812483}
   - component: {fileID: 2096812482}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
