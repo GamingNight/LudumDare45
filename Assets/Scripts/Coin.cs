@@ -45,7 +45,6 @@ public class Coin : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log(name + ": " + status);
         spriteRenderer.enabled = status == CoinStatus.NOT_PICKED_UP;
     }
 
@@ -55,7 +54,7 @@ public class Coin : MonoBehaviour {
         }
 
         if (col.gameObject.tag == "Player") {
-            GameManager.Instance().AddCoin(color);
+            GameManager.Instance().AddCoinValue(color, 1);
             status = CoinStatus.PICKED_UP_NOT_SAVED;
         }
     }
@@ -71,6 +70,7 @@ public class Coin : MonoBehaviour {
 
     public void revertPickUp() {
         status = CoinStatus.NOT_PICKED_UP;
+        GameManager.Instance().AddCoinValue(color, -1);
     }
 
 }

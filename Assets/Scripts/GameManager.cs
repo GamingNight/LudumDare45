@@ -31,20 +31,20 @@ public class GameManager : MonoBehaviour {
         greenCoinCount = 0;
     }
 
-    public void AddCoin(Coin.CoinColor color) {
+    public void AddCoinValue(Coin.CoinColor color, int val) {
 
         switch (color) {
             case Coin.CoinColor.RED:
-                redCoinCount++;
+                redCoinCount += val;
                 break;
             case Coin.CoinColor.BLUE:
-                blueCoinCount++;
+                blueCoinCount += val;
                 break;
             case Coin.CoinColor.YELLOW:
-                yellowCoinCount++;
+                yellowCoinCount += val;
                 break;
             case Coin.CoinColor.GREEN:
-                greenCoinCount++;
+                greenCoinCount += val;
                 break;
             default:
                 break;
@@ -53,35 +53,29 @@ public class GameManager : MonoBehaviour {
 
     void Update() {
 
-        if (redCoinCount == 1) {
-            RevealPlatforms();
-        }
-        if (blueCoinCount == 1) {
-            RevealPeaks();
-        }
-        if (greenCoinCount == 1) {
-            RevealMobilePeaks();
-        }
+        SetPlatformActivation(redCoinCount > 0);
+        SetPeakActivation(blueCoinCount > 0);
+        SetMobilePeakActivation(greenCoinCount > 0);
     }
 
-    private void RevealPlatforms() {
+    private void SetPlatformActivation(bool value) {
 
         foreach (Transform platform in platformContainer.transform) {
-            platform.gameObject.SetActive(true);
+            platform.gameObject.SetActive(value);
         }
     }
 
-    private void RevealPeaks() {
+    private void SetPeakActivation(bool value) {
 
         foreach (Transform peak in peakContainer.transform) {
-            peak.gameObject.SetActive(true);
+            peak.gameObject.SetActive(value);
         }
     }
 
-    private void RevealMobilePeaks() {
+    private void SetMobilePeakActivation(bool value) {
 
         foreach (Transform mPeak in mobilePeakContainer.transform) {
-            mPeak.gameObject.SetActive(true);
+            mPeak.gameObject.SetActive(value);
         }
     }
 }
