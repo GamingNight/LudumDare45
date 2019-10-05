@@ -9,14 +9,22 @@ public class Coin : MonoBehaviour {
 
     public Sprite spriteRed;
     public Sprite spriteBlue;
-    public Sprite spriteYello;
+    public Sprite spriteYellow;
     public Sprite spriteGreen;
 
     public CoinColor color = CoinColor.RED;
 
     void Start() {
-        //GetComponent<SpriteRenderer>().sprint = spriteRed;
-
+        Sprite coinSprite = GetComponent<SpriteRenderer>().sprite;
+        if (color == CoinColor.RED) {
+            coinSprite = spriteRed;
+        } else if (color == CoinColor.BLUE) {
+            coinSprite = spriteBlue;
+        } else if (color == CoinColor.YELLOW) {
+            coinSprite = spriteYellow;
+        } else if (color == CoinColor.GREEN) {
+            coinSprite = spriteGreen;
+        }
     }
 
     void Update() {
