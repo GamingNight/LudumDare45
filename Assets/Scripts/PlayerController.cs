@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
         velocity = inputVelocity;
 
         //Apply gravity to velocity
-        velocity += Physics2D.gravity * Time.deltaTime;
+        velocity += Physics2D.gravity * Time.fixedDeltaTime;
 
         //Remove wall and ceil reactions to velocity
         velocity += wallReaction;
