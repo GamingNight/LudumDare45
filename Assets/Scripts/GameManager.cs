@@ -80,14 +80,14 @@ public class GameManager : MonoBehaviour {
     private void RevealPeaks() {
 
         foreach (Transform peak in peakContainer.transform) {
-
+            peak.gameObject.SetActive(true);
         }
     }
 
     private void RevealMobilePeaks() {
 
-        foreach (Transform peak in mobilePeakContainer.transform) {
-
+        foreach (Transform mPeak in mobilePeakContainer.transform) {
+            mPeak.gameObject.SetActive(true);
         }
     }
 }
