@@ -152,4 +152,10 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
+
+    public void ResetVelocity() {
+
+        Input.ResetInputAxes();
+        velocity.x = 0;
+    }
 }
