@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
     private int blueCoinCount;
     private int greenCoinCount;
     private int yellowCoinCount;
+    public GameObject platformContainer;
+    public GameObject peakContainer;
+    public GameObject mobilePeakContainer;
 
     private void Awake() {
         if (instance == null) {
@@ -45,6 +48,46 @@ public class GameManager : MonoBehaviour {
                 break;
             default:
                 break;
+        }
+    }
+
+    void Update() {
+
+        switch (redCoinCount) {
+            case 1:
+                RevealPlatforms();
+                break;
+            case 2:
+                RevealPeaks();
+                break;
+            case 3:
+                RevealMobilePeaks();
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void RevealPlatforms() {
+
+        foreach (Transform platform in platformContainer.transform) {
+            platform.gameObject.SetActive(true);
+        }
+    }
+
+    private void RevealPeaks() {
+
+        foreach (Transform peak in peakContainer.transform) {
+
+        }
+    }
+
+    private void RevealMobilePeaks() {
+
+        foreach (Transform peak in mobilePeakContainer.transform) {
+
         }
     }
 }
