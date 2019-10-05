@@ -36,21 +36,19 @@ public class Coin : MonoBehaviour {
     }
 
     void Update() {
-
+        gameObject.SetActive(activated);
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        //Debug.Log(" activated = false");
         if (!activated) 
             return;
-
-        //Debug.Log(" activated = true");
         
         if (col.gameObject.tag == "Player") {
             GameManager.Instance().UpdateCoinCount(color);
             activated = false;
             // the destroy must be done later by the gamemanager
-            Destroy(gameObject);
+            // Destroy(gameObject);
+
         }
     }
 
