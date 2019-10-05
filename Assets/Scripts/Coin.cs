@@ -7,9 +7,15 @@ public class Coin : MonoBehaviour {
         RED, BLUE, YELLOW, GREEN
     }
 
+    public Sprite spriteRed;
+    public Sprite spriteBlue;
+    public Sprite spriteYello;
+    public Sprite spriteGreen;
+
     public CoinColor color = CoinColor.RED;
 
     void Start() {
+        //GetComponent<SpriteRenderer>().sprint = spriteRed;
 
     }
 
@@ -23,6 +29,5 @@ public class Coin : MonoBehaviour {
             Destroy (gameObject);
         }
     }
-
 
 }
