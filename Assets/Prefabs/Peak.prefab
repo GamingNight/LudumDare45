@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 7589063664498965130}
   - component: {fileID: 7589063664498965128}
   m_Layer: 0
-  m_Name: Peak1
+  m_Name: Peak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7589063664498965125
 Transform:
   m_ObjectHideFlags: 0
