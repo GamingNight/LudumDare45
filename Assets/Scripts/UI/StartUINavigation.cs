@@ -14,5 +14,6 @@ public class StartUINavigation : MonoBehaviour {
 
     void Update() {
 
+        float v = Input.GetAxis("vertical");
     }
 }
