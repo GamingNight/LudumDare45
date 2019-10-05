@@ -20,6 +20,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    void Start() {
+
+        redCoinCount = 0;
+        blueCoinCount = 0;
+        yellowCoinCount = 0;
+        greenCoinCount = 0;
+    }
+
     public void UpdateCoinCount(Coin.CoinColor color) {
 
         switch (color) {
