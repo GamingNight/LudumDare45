@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public float jumpTakeOffSpeed = 7f;
     //A memory that allows a slight jump instruction delay when player is not grounded.
     public float jumpInputMemory = 0.1f;
+    public float gravityMultiplier = 1;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
@@ -74,7 +75,7 @@ public class PlayerController : MonoBehaviour {
         velocity = inputVelocity;
 
         //Apply gravity to velocity
-        velocity += Physics2D.gravity * Time.fixedDeltaTime;
+        velocity += Physics2D.gravity * Time.fixedDeltaTime * gravityMultiplier;
 
         //Remove wall and ceil reactions to velocity
         velocity += wallReaction;
