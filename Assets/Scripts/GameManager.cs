@@ -89,4 +89,26 @@ public class GameManager : MonoBehaviour {
             t.GetComponent<Coin>().resetPickUp();
         }
     }
+
+    public int GetCoinCount(Coin.CoinColor color) {
+
+        int value = 0;
+        switch (color) {
+            case Coin.CoinColor.RED:
+                value = redCoinCount;
+                break;
+            case Coin.CoinColor.BLUE:
+                value = blueCoinCount;
+                break;
+            case Coin.CoinColor.YELLOW:
+                value = yellowCoinCount;
+                break;
+            case Coin.CoinColor.GREEN:
+                value = greenCoinCount;
+                break;
+            default:
+                break;
+        }
+        return value;
+    }
 }
