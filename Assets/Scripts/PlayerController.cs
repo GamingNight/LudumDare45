@@ -4,6 +4,8 @@ public class PlayerController : MonoBehaviour {
     public float maxSpeed = 7f;
     public float minGroundNormalY = 0.65f;
     public float jumpTakeOffSpeed = 7f;
+    //A memory that allows a slight jump instruction delay when player is not grounded.
+    public float jumpInputMemory = 0.1f;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     private Vector2 groundNormal;
     private bool jump;
     private bool slowJump;
+    private float jumpInputTimer;
 
     private const float minMoveDistance = 0.001f;
     private const float shellRadius = 0.01f;
@@ -32,6 +35,27 @@ public class PlayerController : MonoBehaviour {
         grounded = true;
         jump = false;
         slowJump = false;
+        jumpInputTimer = 0f;
+    }
+
+    void Update() {
+
+        //Register jump entries
+        bool _jumpInputDown = Input.GetKeyDown(KeyCode.Space);
+        if (_jumpInputDown && jumpInputTimer == 0) {
+            jumpInputTimer = jumpInputMemory;
+        } else {
+            jumpInputTimer = Mathf.Max(0, jumpInputTimer - Time.deltaTime);
+        }
+        bool jumpInputUp = Input.GetKeyUp(KeyCode.Space);
+
+        //Register a jump entry 
+        if (jumpInputTimer > 0 && grounded && !jump) {
+            jump = true;
+            jumpInputTimer = 0;
+        }
+        //Register a jump release (slow down jump)
+        slowJump = jumpInputUp && velocity.y > 0;
     }
 
     void FixedUpdate() {
@@ -88,15 +112,6 @@ public class PlayerController : MonoBehaviour {
     private Vector2 ComputeJumpVelocity() {
 
         Vector2 jumpVelocity = Vector2.zero;
-        bool jumpInputDown = Input.GetKeyDown(KeyCode.Space);
-        bool jumpInputUp = Input.GetKeyUp(KeyCode.Space);
-
-        //Register a jump entry 
-        if (jumpInputDown && grounded && !jump) {
-            jump = true;
-        }
-        //Register a jump release (slow down jump)
-        slowJump = jumpInputUp && velocity.y > 0;
 
         //Jump
         if (jump) {
@@ -157,5 +172,6 @@ public class PlayerController : MonoBehaviour {
 
         Input.ResetInputAxes();
         velocity.x = 0;
+        jumpInputTimer = 0;
     }
 }
