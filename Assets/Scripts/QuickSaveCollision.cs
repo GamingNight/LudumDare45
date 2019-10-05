@@ -8,7 +8,7 @@ public class QuickSaveCollision : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col) {
 
         if(col.gameObject.tag == "Player") {
-            col.gameObject.GetComponent<PlayerDeathManager>().SetQuickSavePosition(transform.position);
+            col.gameObject.GetComponent<PlayerDeathManager>().QuickSave(transform.position);
         }
     }
 }
