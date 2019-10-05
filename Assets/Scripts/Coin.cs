@@ -3,7 +3,11 @@ using System.Collections;
 
 public class Coin : MonoBehaviour {
 
-    public int color = 0;
+    public enum CoinColor {
+        RED, BLUE, YELLOW, GREEN
+    }
+
+    public CoinColor color = CoinColor.RED;
 
     void Start() {
 
