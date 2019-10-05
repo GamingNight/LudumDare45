@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour {
     private Vector2 groundNormal;
     private bool jump;
     private bool slowJump;
-    private bool updateJumpVelocity;
 
     private const float minMoveDistance = 0.001f;
     private const float shellRadius = 0.01f;
@@ -33,7 +32,6 @@ public class PlayerController : MonoBehaviour {
         grounded = true;
         jump = false;
         slowJump = false;
-        updateJumpVelocity = true;
     }
 
     void FixedUpdate() {
@@ -100,19 +98,16 @@ public class PlayerController : MonoBehaviour {
         //Register a jump release (slow down jump)
         slowJump = jumpInputUp && velocity.y > 0;
 
-        if (updateJumpVelocity) {
-            updateJumpVelocity = false;
+        //Jump
+        if (jump) {
+            jumpVelocity.y = jumpTakeOffSpeed - wallReaction.y;
+            jump = false;
+        } else if (slowJump) {
+            jumpVelocity.y = velocity.y * 0.5f;
         } else {
-            //Jump
-            if (jump) {
-                jumpVelocity.y = jumpTakeOffSpeed;
-                jump = false;
-            } else if (slowJump) {
-                jumpVelocity.y = velocity.y * 0.5f;
-            } else {
-                jumpVelocity.y = velocity.y;
-            }
+            jumpVelocity.y = velocity.y;
         }
+
 
         return jumpVelocity;
     }
