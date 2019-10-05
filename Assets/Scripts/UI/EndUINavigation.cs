@@ -2,6 +2,11 @@
 using UnityEngine.UI;
 
 public class EndUINavigation : MonoBehaviour {
+
+    public Text redCoins;
+    public Text blueCoins;
+    public Text greenCoins;
+    public Text yellowCoins;
     public Image cursor;
     public Text restart;
     public Text quit;
@@ -13,6 +18,13 @@ public class EndUINavigation : MonoBehaviour {
 
     void Start() {
         currentCursorValue = 0;
+    }
+
+    void OnEnable() {
+        redCoins.text = "Red " + GameManager.Instance().GetCoinCount(Coin.CoinColor.RED) + "/20";
+        blueCoins.text = "Blue " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLUE) + "/20";
+        greenCoins.text = "Green " + GameManager.Instance().GetCoinCount(Coin.CoinColor.GREEN) + "/20";
+        yellowCoins.text = "Yellow " + GameManager.Instance().GetCoinCount(Coin.CoinColor.YELLOW) + "/20";
     }
 
     void Update() {
