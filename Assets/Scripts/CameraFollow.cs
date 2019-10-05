@@ -8,12 +8,7 @@ public class CameraFollow : MonoBehaviour
     public float dampTime = 0.15f;
     private Vector3 velocity = Vector3.zero;
     public Transform target;
-    private Vector3 offset;
-
-    void Start()
-    {
-        offset = transform.position - target.position;
-    }
+    public Vector3 offset = new Vector3 (0f,2f,-10f);
 
     void FixedUpdate()
     {
