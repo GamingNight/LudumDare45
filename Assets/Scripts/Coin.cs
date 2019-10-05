@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Coin : MonoBehaviour {
 
     public enum CoinColor {
         RED, BLUE, YELLOW, GREEN
+    }
+
+    public enum CoinStatus {
+        PICKED_UP, PICKED_UP_NOT_SAVED, NOT_PICKED_UP
     }
 
     public Sprite spriteRed;
@@ -13,45 +16,61 @@ public class Coin : MonoBehaviour {
     public Sprite spriteGreen;
 
     public CoinColor color = CoinColor.RED;
-    public bool activated = true;
+
+    private SpriteRenderer spriteRenderer;
+    private CoinStatus status;
 
     void Start() {
-        Sprite coinSprite = GetComponent<SpriteRenderer>().sprite;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        status = CoinStatus.NOT_PICKED_UP;
+        Sprite coinSprite = spriteRenderer.sprite;
         switch (color) {
-        case Coin.CoinColor.RED:
-            coinSprite = spriteRed;
-            break;
-        case Coin.CoinColor.BLUE:
-            coinSprite = spriteBlue;
-            break;
-        case Coin.CoinColor.YELLOW:
-            coinSprite = spriteYellow;
-            break;
-        case Coin.CoinColor.GREEN:
-            coinSprite = spriteGreen;
-            break;
-        default:
-            break;
+            case Coin.CoinColor.RED:
+                coinSprite = spriteRed;
+                break;
+            case Coin.CoinColor.BLUE:
+                coinSprite = spriteBlue;
+                break;
+            case Coin.CoinColor.YELLOW:
+                coinSprite = spriteYellow;
+                break;
+            case Coin.CoinColor.GREEN:
+                coinSprite = spriteGreen;
+                break;
+            default:
+                break;
         }
     }
 
     void Update() {
-
+        spriteRenderer.enabled = status == CoinStatus.NOT_PICKED_UP;
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        //Debug.Log(" activated = false");
-        if (!activated) 
+        if (status != CoinStatus.NOT_PICKED_UP) {
             return;
-
-        //Debug.Log(" activated = true");
-        
-        if (col.gameObject.tag == "Player") {
-            GameManager.Instance().UpdateCoinCount(color);
-            activated = false;
-            // the destroy must be done later by the gamemanager
-            Destroy(gameObject);
         }
+
+        if (col.gameObject.tag == "Player") {
+            GameManager.Instance().AddCoinValue(color, 1);
+            status = CoinStatus.PICKED_UP_NOT_SAVED;
+        }
+    }
+
+    public CoinStatus GetStatus() {
+
+        return status;
+    }
+
+    public void saveCoin() {
+        status = CoinStatus.PICKED_UP;
+    }
+
+    public void revertPickUp() {
+        status = CoinStatus.NOT_PICKED_UP;
+        GameManager.Instance().AddCoinValue(color, -1);
     }
 
 }

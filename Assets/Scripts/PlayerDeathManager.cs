@@ -1,18 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerDeathManager : MonoBehaviour
-{
+public class PlayerDeathManager : MonoBehaviour {
 
     private Vector3 lastQuickSavePosition;
+    public GameObject coinContainer;
 
     public void Die() {
         GetComponent<PlayerController>().ResetVelocity();
         transform.position = lastQuickSavePosition;
+        foreach (Transform child in coinContainer.transform) {
+            Coin coin = child.gameObject.GetComponent<Coin>();
+            if (coin.GetStatus() == Coin.CoinStatus.PICKED_UP_NOT_SAVED) {
+                coin.revertPickUp();
+            }
+        }
     }
 
-    public void SetQuickSavePosition(Vector3 quickSavePosition) {
+    public void QuickSave(Vector3 quickSavePosition) {
         lastQuickSavePosition = quickSavePosition;
+        foreach (Transform child in coinContainer.transform) {
+            Coin coin = child.gameObject.GetComponent<Coin>();
+            if (coin.GetStatus() == Coin.CoinStatus.PICKED_UP_NOT_SAVED) {
+                coin.saveCoin();
+            }
+        }
     }
 }
