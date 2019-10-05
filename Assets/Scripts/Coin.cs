@@ -46,12 +46,11 @@ public class Coin : MonoBehaviour {
 
         //Debug.Log(" activated = true");
         
-        GameManager.Instance().UpdateCoinCount(color);
         if (col.gameObject.tag == "Player") {
             GameManager.Instance().UpdateCoinCount(color);
             activated = false;
             // the destroy must be done later by the gamemanager
-            Destroy (gameObject);
+            Destroy (gameObject)
         }
     }
 
