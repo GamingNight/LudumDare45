@@ -123,10 +123,12 @@ public class PlayerController : MonoBehaviour {
             walkVelocity.x = velocity.x;
         }
 
-        //Flip sprite if necessary
+        //Flip sprite and ground tolerance child if necessary 
         bool flipSprite = (spriteRenderer.flipX ? (h < 0f) : (h > 0f));
         if (flipSprite) {
             spriteRenderer.flipX = !spriteRenderer.flipX;
+            BoxCollider2D boxCollider = groundToleranceRgbd2D.GetComponent<BoxCollider2D>();
+            boxCollider.offset = new Vector2(-boxCollider.offset.x, boxCollider.offset.y);
         }
 
         return walkVelocity;
