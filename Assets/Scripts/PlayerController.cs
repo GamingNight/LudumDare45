@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour {
         jumpInputTimer = 0f;
 
         animator = gameObject.GetComponent<Animator>();
+
+        initPosition = transform.position;
     }
 
     public void ResetPosition() {
