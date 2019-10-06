@@ -1,0 +1,15 @@
+Impératif
+- Faire les graphismes décors
+- Finir level design (en commençant par les plateformes)
+- Trouver un nom au jeu
+- Faire les sons et la musique
+- Faire des beaux menus
+
+Pas impératif
+- Orienter animation perso dans son saut
+- Transition des menus au jeu
+- Transition d'apparition des décors quand on chope les pièces interrupteurs
+- Ajouter le temps au score final
+- Ajouter "Restart with something" dans le menu fin
+- Faire un Menu pause
+- Rajouter la pièce jaune, avec effet des plateformes temporaires
