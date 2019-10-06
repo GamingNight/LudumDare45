@@ -10,12 +10,7 @@ public class Coin : MonoBehaviour {
         DEACTIVATED, TO_BE_PICKED, PICKED_UP_NOT_SAVED, PICKED_UP
     }
 
-    public Sprite spriteRed;
-    public Sprite spriteBlue;
-    public Sprite spriteYellow;
-    public Sprite spriteGreen;
-
-    public CoinColor color = CoinColor.BLACK;  
+    public CoinColor color = CoinColor.BLACK;
 
     private SpriteRenderer spriteRenderer;
     protected CoinStatus status = CoinStatus.DEACTIVATED;
@@ -23,29 +18,14 @@ public class Coin : MonoBehaviour {
     protected void Start() {
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-
         status = CoinStatus.DEACTIVATED;
-        Sprite coinSprite = spriteRenderer.sprite;
-        switch (color) {
-            case Coin.CoinColor.BLACK:
-                coinSprite = spriteRed;
-                break;
-            case Coin.CoinColor.RED:
-                coinSprite = spriteBlue;
-                break;
-            case Coin.CoinColor.BLUE:
-                coinSprite = spriteYellow;
-                break;
-            case Coin.CoinColor.YELLOW:
-                coinSprite = spriteGreen;
-                break;
-            default:
-                break;
-        }
     }
 
     protected void Update() {
         spriteRenderer.enabled = status == CoinStatus.TO_BE_PICKED;
+        foreach (Transform child in transform) {
+            child.GetComponent<SpriteRenderer>().enabled = status == CoinStatus.TO_BE_PICKED;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col) {
