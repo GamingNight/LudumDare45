@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour {
         transform.position = initPosition;
     }
 
+    public Vector3 GetInitPosition() {
+
+        return initPosition;
+    }
+
     void Update() {
 
         //Register jump entries
@@ -65,6 +70,7 @@ public class PlayerController : MonoBehaviour {
         if (jumpInputTimer > 0 && grounded && !jump) {
             jump = true;
             jumpInputTimer = 0;
+            Debug.Log("Jump registered");
         }
         //Register a jump release (slow down jump)
         slowJump = jumpInputUp && velocity.y > 0;
