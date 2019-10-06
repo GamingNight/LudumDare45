@@ -18092,41 +18092,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 627116981308081650, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 627116981308081650, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -27.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 3621067199854803331, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 3621067199854803331, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128087699152346713, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 9105323361193332552, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -43.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 9105323361193332552, guid: 9345b4cf03cf29f479010c4983182299,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.66
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9345b4cf03cf29f479010c4983182299, type: 3}
 --- !u!4 &753512329 stripped
@@ -34302,19 +34267,19 @@ Transform:
   - {fileID: 1031008142}
   - {fileID: 932697969}
   - {fileID: 2013270143}
+  - {fileID: 655837193}
   - {fileID: 1998210035}
   - {fileID: 1490527217}
-  - {fileID: 655837193}
-  - {fileID: 151586867}
-  - {fileID: 964065028}
   - {fileID: 614444116}
   - {fileID: 1478233816}
-  - {fileID: 1698442204}
-  - {fileID: 1243917495}
+  - {fileID: 151586867}
+  - {fileID: 964065028}
   - {fileID: 397700406}
+  - {fileID: 1243917495}
   - {fileID: 582821646}
   - {fileID: 1717802622}
   - {fileID: 896679220}
+  - {fileID: 1698442204}
   - {fileID: 512006121}
   - {fileID: 1657813756}
   - {fileID: 748245824}
@@ -34726,6 +34691,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201666743}
     m_Modifications:
+    - target: {fileID: 4387515408830279207, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: RedCoin (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 4387515408830279205, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34780,11 +34750,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4387515408830279207, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: RedCoin (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -48839,16 +48804,6 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7041247360183873491, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
-        type: 3}
-      propertyPath: eyeSpriteRenderer
-      value: 
-      objectReference: {fileID: 1783822079}
-    - target: {fileID: 7041247360183873490, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
-        type: 3}
-      propertyPath: coinContainer
-      value: 
-      objectReference: {fileID: 753512330}
     - target: {fileID: 7041247360183873494, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -48869,5 +48824,15 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7041247360183873491, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
+        type: 3}
+      propertyPath: eyeSpriteRenderer
+      value: 
+      objectReference: {fileID: 1783822079}
+    - target: {fileID: 7041247360183873490, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
+        type: 3}
+      propertyPath: coinContainer
+      value: 
+      objectReference: {fileID: 753512330}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2d402313eb1ec47ab41d05ac8c57d2, type: 3}
