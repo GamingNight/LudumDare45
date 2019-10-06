@@ -5,8 +5,12 @@ public class PlayerDeathManager : MonoBehaviour {
     private Vector3 lastQuickSavePosition;
     public GameObject coinContainer;
 
+    void Start() {
+        lastQuickSavePosition = transform.position;
+    }
+
     public void ResetSave() {
-        lastQuickSavePosition = GetComponent<PlayerController>().initPosition;
+        lastQuickSavePosition = GetComponent<PlayerController>().GetInitPosition();
     }
 
     public void Die() {

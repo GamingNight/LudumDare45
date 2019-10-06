@@ -2,7 +2,6 @@
 
 public class PlayerController : MonoBehaviour {
 
-    public Vector2 initPosition;
     public float maxSpeed = 7f;
     public float minGroundNormalY = 0.65f;
     public float jumpTakeOffSpeed = 7f;
@@ -10,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public float jumpInputMemory = 0.1f;
     public float gravityMultiplier = 1;
 
+    private Vector2 initPosition;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
 
@@ -39,11 +39,17 @@ public class PlayerController : MonoBehaviour {
         jump = false;
         slowJump = false;
         jumpInputTimer = 0f;
+
+        initPosition = transform.position;
     }
 
     public void ResetPosition() {
 
         transform.position = initPosition;
+    }
+
+    public Vector3 GetInitPosition() {
+        return initPosition;
     }
 
     void Update() {
