@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour {
 
         //Convert velocity into a position shift
         Vector2 deltaPosition = velocity * Time.deltaTime;
-        animator.SetBool("isWalking", velocity.x != 0);
 
 
         //Compte movement along ground
@@ -114,8 +113,10 @@ public class PlayerController : MonoBehaviour {
         float h = Input.GetAxis("Horizontal");
         Vector2 walkVelocity = Vector2.zero;
         if (h != 0) {
+            animator.SetBool("isWalking", true);
             walkVelocity.x = h * maxSpeed;
         } else {
+            animator.SetBool("isWalking", false);
             walkVelocity.x = velocity.x;
         }
 

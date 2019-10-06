@@ -12945,36 +12945,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 279437674}
-    - target: {fileID: 1478762073382618894, guid: 9519b0cdebb3fe045911c8e817ca238d,
-        type: 3}
-      propertyPath: offset.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478762073382618894, guid: 9519b0cdebb3fe045911c8e817ca238d,
-        type: 3}
-      propertyPath: offset.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478762073382618894, guid: 9519b0cdebb3fe045911c8e817ca238d,
-        type: 3}
-      propertyPath: leftRightDownUpBoundaries.x
-      value: -40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478762073382618894, guid: 9519b0cdebb3fe045911c8e817ca238d,
-        type: 3}
-      propertyPath: leftRightDownUpBoundaries.y
-      value: 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478762073382618894, guid: 9519b0cdebb3fe045911c8e817ca238d,
-        type: 3}
-      propertyPath: leftRightDownUpBoundaries.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1478762073382618894, guid: 9519b0cdebb3fe045911c8e817ca238d,
-        type: 3}
-      propertyPath: leftRightDownUpBoundaries.w
-      value: 38
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9519b0cdebb3fe045911c8e817ca238d, type: 3}
 --- !u!1001 &1824090913
