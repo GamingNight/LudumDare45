@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
+    public Rigidbody2D groundToleranceRgbd2D;
 
     private ContactFilter2D contactFilter;
     private RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
@@ -178,6 +179,19 @@ public class PlayerController : MonoBehaviour {
 
                 float modifiedDistance = hitBuffer[i].distance - shellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
+            }
+
+            //Ground tolerance handling
+            count = groundToleranceRgbd2D.Cast(movement, contactFilter, hitBuffer, distance + shellRadius);
+            for (int i = 0; i < count; i++) {
+                Vector2 currentNormal = hitBuffer[i].normal;
+                if (currentNormal.y > minGroundNormalY) {
+                    grounded = true;
+                    if (yMovement) {
+                        groundNormal = currentNormal;
+                        currentNormal.x = 0;
+                    }
+                }
             }
         }
 
