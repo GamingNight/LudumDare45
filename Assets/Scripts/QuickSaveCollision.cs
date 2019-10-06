@@ -8,14 +8,19 @@ public class QuickSaveCollision : MonoBehaviour
 
 	    void Start() {
         animator = gameObject.GetComponent<Animator>();
-        animator.SetBool("ON", false);
+        SetAnimation(false);
     }
 
     void OnTriggerEnter2D(Collider2D col) {
 
         if(col.gameObject.tag == "Player") {
             col.gameObject.GetComponent<PlayerDeathManager>().QuickSave(transform.position);
-            animator.SetBool("ON", true);
+            col.gameObject.GetComponent<PlayerDeathManager>().QuickSaveTriggerUpdate(this);
         }
+    }
+
+    public void SetAnimation(bool mybool) {
+
+        animator.SetBool("ON", mybool);
     }
 }
