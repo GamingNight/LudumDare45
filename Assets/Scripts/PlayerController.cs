@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour {
 
         //Register a jump release (slow down jump)
         slowJump = jumpInputUp && velocity.y > 0;
+
     }
 
     void FixedUpdate() {
@@ -218,4 +219,5 @@ public class PlayerController : MonoBehaviour {
         velocity.x = 0;
         jumpInputTimer = 0;
     }
+
 }
