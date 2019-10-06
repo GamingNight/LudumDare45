@@ -6817,6 +6817,7 @@ Transform:
   - {fileID: 1938791810}
   - {fileID: 743682383}
   - {fileID: 771392206}
+  - {fileID: 1567884820}
   m_Father: {fileID: 2024374879}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8860,7 +8861,6 @@ Transform:
   m_Children:
   - {fileID: 988877992}
   - {fileID: 2080291083}
-  - {fileID: 1567884820}
   m_Father: {fileID: 1896449119}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9627,7 +9627,7 @@ MonoBehaviour:
   mobilePeakContainer: {fileID: 786696944}
   coinContainer: {fileID: 1320009090}
   player: {fileID: 279437673}
-  debugActivateCoins: 1
+  debugActivateCoins: 0
 --- !u!1 &1344696773
 GameObject:
   m_ObjectHideFlags: 0
@@ -10966,7 +10966,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1201666743}
+    m_TransformParent: {fileID: 786696945}
     m_Modifications:
     - target: {fileID: 3362344619336840453, guid: 5f33bbf67fe6fe34aa860b4396a932ff,
         type: 3}
@@ -11011,7 +11011,7 @@ PrefabInstance:
     - target: {fileID: 3362344619336840452, guid: 5f33bbf67fe6fe34aa860b4396a932ff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 3362344619336840452, guid: 5f33bbf67fe6fe34aa860b4396a932ff,
         type: 3}
