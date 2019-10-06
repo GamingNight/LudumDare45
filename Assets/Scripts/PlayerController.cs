@@ -46,8 +46,6 @@ public class PlayerController : MonoBehaviour {
 
         animator = gameObject.GetComponent<Animator>();
 
-        walkSFX = gameObject.GetComponent<AudioSource>();
-
         initPosition = transform.position;
     }
 
