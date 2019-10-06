@@ -3,10 +3,12 @@
 public class PlayerDeathManager : MonoBehaviour {
 
     private Vector3 lastQuickSavePosition;
+    private QuickSaveCollision lastQuickSaveTriggerActivated;
     public GameObject coinContainer;
 
     void Start() {
         lastQuickSavePosition = transform.position;
+        lastQuickSaveTriggerActivated = null;
     }
 
     public void ResetSave() {
@@ -45,4 +47,13 @@ public class PlayerDeathManager : MonoBehaviour {
         }
 
     }
+
+    public void QuickSaveTriggerUpdate(QuickSaveCollision quickSaveTrigger) {
+    	if (lastQuickSaveTriggerActivated != null) {
+    		lastQuickSaveTriggerActivated.SetAnimation(false);
+    	}
+    	lastQuickSaveTriggerActivated = quickSaveTrigger;
+    	lastQuickSaveTriggerActivated.SetAnimation(true);
+    }
+
 }
