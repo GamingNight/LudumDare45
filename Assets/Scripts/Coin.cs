@@ -7,7 +7,7 @@ public class Coin : MonoBehaviour {
     }
 
     public enum CoinStatus {
-        PICKED_UP, PICKED_UP_NOT_SAVED, NOT_PICKED_UP
+        DEACTIVATED, TO_BE_PICKED, PICKED_UP_NOT_SAVED, PICKED_UP
     }
 
     public Sprite spriteRed;
@@ -18,13 +18,13 @@ public class Coin : MonoBehaviour {
     public CoinColor color = CoinColor.RED;
 
     private SpriteRenderer spriteRenderer;
-    private CoinStatus status = CoinStatus.NOT_PICKED_UP;
+    protected CoinStatus status = CoinStatus.DEACTIVATED;
 
-    void Start() {
+    protected void Start() {
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        status = CoinStatus.NOT_PICKED_UP;
+        status = CoinStatus.DEACTIVATED;
         Sprite coinSprite = spriteRenderer.sprite;
         switch (color) {
             case Coin.CoinColor.RED:
@@ -44,12 +44,12 @@ public class Coin : MonoBehaviour {
         }
     }
 
-    void Update() {
-        spriteRenderer.enabled = status == CoinStatus.NOT_PICKED_UP;
+    protected void Update() {
+        spriteRenderer.enabled = status == CoinStatus.TO_BE_PICKED;
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (status != CoinStatus.NOT_PICKED_UP) {
+        if (status != CoinStatus.TO_BE_PICKED) {
             return;
         }
 
@@ -59,21 +59,30 @@ public class Coin : MonoBehaviour {
         }
     }
 
-    public CoinStatus GetStatus() {
+    public void SaveCoin() {
+        if (status == CoinStatus.PICKED_UP_NOT_SAVED) {
+            status = CoinStatus.PICKED_UP;
+        }
+    }
 
+    public void ResetPickUp() {
+        if (status == CoinStatus.PICKED_UP_NOT_SAVED) {
+            GameManager.Instance().AddCoinValue(color, -1);
+            status = CoinStatus.TO_BE_PICKED;
+        }
+    }
+
+    public void Activate() {
+        if (status == CoinStatus.DEACTIVATED) {
+            status = CoinStatus.TO_BE_PICKED;
+        }
+    }
+
+    public void Deactivate() {
+        status = CoinStatus.DEACTIVATED;
+    }
+
+    public Coin.CoinStatus GetStatus() {
         return status;
     }
-
-    public void saveCoin() {
-        status = CoinStatus.PICKED_UP;
-    }
-
-    public void resetPickUp() {
-        if (status != CoinStatus.NOT_PICKED_UP) {
-            GameManager.Instance().AddCoinValue(color, -1);
-        }
-        status = CoinStatus.NOT_PICKED_UP;
-
-    }
-
 }

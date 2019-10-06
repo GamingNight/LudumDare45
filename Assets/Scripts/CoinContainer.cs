@@ -5,39 +5,36 @@ public class CoinContainer : MonoBehaviour {
 
     public GameObject coinsContainerObject;
 
-    public enum CoinContainerStatus {
-        PICKED_UP, PICKED_UP_NOT_SAVED, NOT_PICKED_UP
-    }
-    private CoinContainerStatus status = CoinContainerStatus.NOT_PICKED_UP;
+    private Coin.CoinStatus status = Coin.CoinStatus.TO_BE_PICKED;
 
     void Start() {
-        status = CoinContainerStatus.NOT_PICKED_UP;
+        status = Coin.CoinStatus.TO_BE_PICKED;
     }
 
     void Update() {
-        SetCoinsActivation((status != CoinContainerStatus.NOT_PICKED_UP));
+        SetCoinsActivation((status != Coin.CoinStatus.TO_BE_PICKED));
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (status != CoinContainerStatus.NOT_PICKED_UP) {
+        if (status != Coin.CoinStatus.TO_BE_PICKED) {
             return;
         }
 
         if (col.gameObject.tag == "Player") {
-            status = CoinContainerStatus.PICKED_UP_NOT_SAVED;
+            status = Coin.CoinStatus.PICKED_UP_NOT_SAVED;
         }
     }
 
-    public CoinContainerStatus GetStatus() {
+    public Coin.CoinStatus GetStatus() {
         return status;
     }
 
-    public void saveCoin() {
-        status = CoinContainerStatus.PICKED_UP;
+    public void SaveCoin() {
+        status = Coin.CoinStatus.PICKED_UP;
     }
 
-    public void resetPickUp() {
-        status = CoinContainerStatus.NOT_PICKED_UP;
+    public void ResetPickUp() {
+        status = Coin.CoinStatus.TO_BE_PICKED;
     }
 
 

@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
 
+        ResetCoinCount();
+    }
+
+    private void ResetCoinCount() {
         redCoinCount = 0;
         blueCoinCount = 0;
         yellowCoinCount = 0;
@@ -99,20 +103,19 @@ public class GameManager : MonoBehaviour {
         UpdateLevelActivation();
         player.GetComponent<PlayerController>().ResetPosition();
         player.GetComponent<PlayerDeathManager>().ResetSave();
-        foreach (Transform t in coinContainer.transform) {
-        	Coin switchedCoin = t.GetComponent<Coin>();
-        	if (switchedCoin == null) {
-        		foreach (Transform t2 in t.transform) {
-        			t2.GetComponent<Coin>().resetPickUp();
-        		}
-        	} else {
-                 switchedCoin.resetPickUp();
-            }
-            CoinContainer switchedCoinContainer = t.GetComponent<CoinContainer>();
-            if (switchedCoinContainer != null) {
-                switchedCoinContainer.resetPickUp();
+        foreach (Transform child in coinContainer.transform) {
+            Coin switchedCoin = child.GetComponent<Coin>();
+            bool isContainer = switchedCoin == null;
+            if (isContainer) {
+                foreach (Transform subChild in child.transform) {
+                    subChild.GetComponent<Coin>().Deactivate();
+                }
+            } else {
+                child.GetComponent<Coin>().Deactivate();
+                child.GetComponent<Coin>().Activate();
             }
         }
+        ResetCoinCount();
     }
 
     public int GetCoinCount(Coin.CoinColor color) {
