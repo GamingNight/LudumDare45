@@ -2,7 +2,6 @@
 
 public class PlayerController : MonoBehaviour {
 
-    public Vector2 initPosition;
     public float maxSpeed = 7f;
     public float minGroundNormalY = 0.65f;
     public float jumpTakeOffSpeed = 7f;
@@ -16,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     private ContactFilter2D contactFilter;
     private RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
 
+    private Vector2 initPosition;
     private Vector2 velocity;
     private Vector2 wallReaction;
     private bool grounded;
