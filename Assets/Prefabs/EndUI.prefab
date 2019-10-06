@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5868171421350257216}
   - component: {fileID: 5868171421350257219}
   m_Layer: 0
-  m_Name: BlueCoins
+  m_Name: RedCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 5868171421613627506}
   - component: {fileID: 5868171421613627517}
   m_Layer: 0
-  m_Name: GreenCoins
+  m_Name: BlueCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,9 +853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f284f2562de0c4d84659753de6090e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redCoins: {fileID: 5868171422904938388}
-  blueCoins: {fileID: 5868171421350257219}
-  greenCoins: {fileID: 5868171421613627517}
+  blackCoins: {fileID: 5868171422904938388}
+  redCoins: {fileID: 5868171421350257219}
+  blueCoins: {fileID: 5868171421613627517}
   yellowCoins: {fileID: 5868171421136273671}
   cursor: {fileID: 5868171421177579650}
   restart: {fileID: 5868171421986973868}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 5868171422904938389}
   - component: {fileID: 5868171422904938388}
   m_Layer: 0
-  m_Name: RedCoins
+  m_Name: BlackCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

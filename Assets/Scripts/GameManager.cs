@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour {
         return instance;
     }
 
+    private int blackCoinCount;
     private int redCoinCount;
     private int blueCoinCount;
-    private int greenCoinCount;
     private int yellowCoinCount;
 
     public GameObject platformContainer;
@@ -34,22 +34,25 @@ public class GameManager : MonoBehaviour {
     }
 
     private void ResetCoinCount() {
+        blackCoinCount = 0;
         redCoinCount = 0;
         blueCoinCount = 0;
         yellowCoinCount = 0;
-        greenCoinCount = 0;
 
         if (debugActivateCoins) {
+            blackCoinCount++;
             redCoinCount++;
             blueCoinCount++;
             yellowCoinCount++;
-            greenCoinCount++;
         }
     }
 
     public void AddCoinValue(Coin.CoinColor color, int val) {
 
         switch (color) {
+            case Coin.CoinColor.BLACK:
+                blackCoinCount += val;
+                break;
             case Coin.CoinColor.RED:
                 redCoinCount += val;
                 break;
@@ -59,9 +62,6 @@ public class GameManager : MonoBehaviour {
             case Coin.CoinColor.YELLOW:
                 yellowCoinCount += val;
                 break;
-            case Coin.CoinColor.GREEN:
-                greenCoinCount += val;
-                break;
             default:
                 break;
         }
@@ -69,9 +69,9 @@ public class GameManager : MonoBehaviour {
 
     private void UpdateLevelActivation() {
 
-        SetPlatformActivation(redCoinCount > 0);
-        SetPeakActivation(blueCoinCount > 0);
-        SetMobilePeakActivation(greenCoinCount > 0);
+        SetPlatformActivation(blackCoinCount > 0);
+        SetPeakActivation(redCoinCount > 0);
+        SetMobilePeakActivation(blueCoinCount > 0);
     }
 
     void Update() {
@@ -122,6 +122,9 @@ public class GameManager : MonoBehaviour {
 
         int value = 0;
         switch (color) {
+            case Coin.CoinColor.BLACK:
+                value = blackCoinCount;
+                break;
             case Coin.CoinColor.RED:
                 value = redCoinCount;
                 break;
@@ -130,9 +133,6 @@ public class GameManager : MonoBehaviour {
                 break;
             case Coin.CoinColor.YELLOW:
                 value = yellowCoinCount;
-                break;
-            case Coin.CoinColor.GREEN:
-                value = greenCoinCount;
                 break;
             default:
                 break;

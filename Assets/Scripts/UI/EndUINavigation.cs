@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class EndUINavigation : MonoBehaviour {
 
+    public Text blackCoins;
     public Text redCoins;
     public Text blueCoins;
-    public Text greenCoins;
     public Text yellowCoins;
     public Image cursor;
     public Text restart;
@@ -21,9 +21,9 @@ public class EndUINavigation : MonoBehaviour {
     }
 
     void OnEnable() {
+        blackCoins.text = "Black " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLACK) + "/20";
         redCoins.text = "Red " + GameManager.Instance().GetCoinCount(Coin.CoinColor.RED) + "/20";
         blueCoins.text = "Blue " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLUE) + "/20";
-        greenCoins.text = "Green " + GameManager.Instance().GetCoinCount(Coin.CoinColor.GREEN) + "/20";
         yellowCoins.text = "Yellow " + GameManager.Instance().GetCoinCount(Coin.CoinColor.YELLOW) + "/20";
     }
 

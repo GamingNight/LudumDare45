@@ -3,7 +3,7 @@
 public class Coin : MonoBehaviour {
 
     public enum CoinColor {
-        RED, BLUE, YELLOW, GREEN
+        BLACK, RED, BLUE, YELLOW
     }
 
     public enum CoinStatus {
@@ -15,7 +15,7 @@ public class Coin : MonoBehaviour {
     public Sprite spriteYellow;
     public Sprite spriteGreen;
 
-    public CoinColor color = CoinColor.RED;
+    public CoinColor color = CoinColor.BLACK;  
 
     private SpriteRenderer spriteRenderer;
     protected CoinStatus status = CoinStatus.DEACTIVATED;
@@ -27,16 +27,16 @@ public class Coin : MonoBehaviour {
         status = CoinStatus.DEACTIVATED;
         Sprite coinSprite = spriteRenderer.sprite;
         switch (color) {
-            case Coin.CoinColor.RED:
+            case Coin.CoinColor.BLACK:
                 coinSprite = spriteRed;
                 break;
-            case Coin.CoinColor.BLUE:
+            case Coin.CoinColor.RED:
                 coinSprite = spriteBlue;
                 break;
-            case Coin.CoinColor.YELLOW:
+            case Coin.CoinColor.BLUE:
                 coinSprite = spriteYellow;
                 break;
-            case Coin.CoinColor.GREEN:
+            case Coin.CoinColor.YELLOW:
                 coinSprite = spriteGreen;
                 break;
             default:
