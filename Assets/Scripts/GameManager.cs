@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     public GameObject coinContainer;
     public GameObject player;
 
+    public bool debugActivateCoins = false;
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -32,6 +34,13 @@ public class GameManager : MonoBehaviour {
         blueCoinCount = 0;
         yellowCoinCount = 0;
         greenCoinCount = 0;
+
+        if (debugActivateCoins) {
+            redCoinCount++;
+            blueCoinCount++;
+            yellowCoinCount++;
+            greenCoinCount++;
+        }
     }
 
     public void AddCoinValue(Coin.CoinColor color, int val) {
@@ -54,11 +63,15 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void Update() {
+    private void UpdateLevelActivation() {
 
         SetPlatformActivation(redCoinCount > 0);
         SetPeakActivation(blueCoinCount > 0);
         SetMobilePeakActivation(greenCoinCount > 0);
+    }
+
+    void Update() {
+        UpdateLevelActivation();
     }
 
     private void SetPlatformActivation(bool value) {
@@ -83,6 +96,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ResetGame() {
+        UpdateLevelActivation();
         player.GetComponent<PlayerController>().ResetPosition();
         player.GetComponent<PlayerDeathManager>().ResetSave();
         foreach (Transform t in coinContainer.transform) {
