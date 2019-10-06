@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dampTime: 0.2
-  target: {fileID: 0}
   offset: {x: 0, y: 2, z: -10}
+  leftRightDownUpBoundaries: {x: -40, y: 43, z: 3, w: 38}
