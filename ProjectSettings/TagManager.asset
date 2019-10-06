@@ -42,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back Nature
+    uniqueID: 987578329
+    locked: 0
+  - name: Back Animals
+    uniqueID: 3647651885
+    locked: 0
+  - name: Player
+    uniqueID: 3407186555
+    locked: 0
+  - name: Front Nature
+    uniqueID: 4153049157
+    locked: 0
+  - name: Front Animals
+    uniqueID: 2914967191
+    locked: 0
