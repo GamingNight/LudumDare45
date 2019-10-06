@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
     private const float minMoveDistance = 0.001f;
     private const float shellRadius = 0.01f;
-    
+
     private Animator animator;
 
     void Start() {
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour {
 
         //Convert velocity into a position shift
         Vector2 deltaPosition = velocity * Time.deltaTime;
+        animator.SetBool("isWalking", velocity.x != 0);
 
 
         //Compte movement along ground
@@ -108,10 +109,8 @@ public class PlayerController : MonoBehaviour {
         Vector2 walkVelocity = Vector2.zero;
         if (h != 0) {
             walkVelocity.x = h * maxSpeed;
-            animator.SetBool("isWalking", true);
         } else {
             walkVelocity.x = velocity.x;
-            animator.SetBool("isWalking", false);
         }
 
         //Flip sprite if necessary
