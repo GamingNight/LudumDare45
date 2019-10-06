@@ -100,7 +100,18 @@ public class GameManager : MonoBehaviour {
         player.GetComponent<PlayerController>().ResetPosition();
         player.GetComponent<PlayerDeathManager>().ResetSave();
         foreach (Transform t in coinContainer.transform) {
-            t.GetComponent<Coin>().resetPickUp();
+        	Coin switchedCoin = t.GetComponent<Coin>();
+        	if (switchedCoin == null) {
+        		foreach (Transform t2 in t.transform) {
+        			t2.GetComponent<Coin>().resetPickUp();
+        		}
+        	} else {
+                 switchedCoin.resetPickUp();
+            }
+            CoinContainer switchedCoinContainer = t.GetComponent<CoinContainer>();
+            if (switchedCoinContainer != null) {
+                switchedCoinContainer.resetPickUp();
+            }
         }
     }
 
