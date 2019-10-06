@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4387515408830279204}
   - component: {fileID: 4387515408830279227}
   m_Layer: 0
-  m_Name: redCoin
+  m_Name: blackCoin
   m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7cdb13d1c0da3cd4e95a6b338525fa16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29f09e1bc5c3c6347b2e935add7808c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,10 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c0adfca6f8b2442af6679aa2794547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRed: {fileID: 21300000, guid: 7cdb13d1c0da3cd4e95a6b338525fa16, type: 3}
-  spriteBlue: {fileID: 21300000, guid: 60ecf25c196734c44a3996a86d91f2f5, type: 3}
-  spriteYellow: {fileID: 21300000, guid: 7c27cf303cdb9b449877eb09285c36e6, type: 3}
-  spriteGreen: {fileID: 21300000, guid: 235c2c635fcd09b48934596124c5536a, type: 3}
   color: 0
 --- !u!61 &4387515408830279227
 BoxCollider2D:
@@ -116,7 +112,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.43, y: 0.39}
+    oldSize: {x: 0.38, y: 0.38}
     newSize: {x: 0.43, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
