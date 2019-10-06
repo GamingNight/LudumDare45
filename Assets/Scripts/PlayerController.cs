@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
 
     private const float minMoveDistance = 0.001f;
     private const float shellRadius = 0.01f;
+    
+    private Animator animator;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -39,6 +41,8 @@ public class PlayerController : MonoBehaviour {
         jump = false;
         slowJump = false;
         jumpInputTimer = 0f;
+
+        animator = gameObject.GetComponent<Animator>();
     }
 
     public void ResetPosition() {
@@ -104,12 +108,14 @@ public class PlayerController : MonoBehaviour {
         Vector2 walkVelocity = Vector2.zero;
         if (h != 0) {
             walkVelocity.x = h * maxSpeed;
+            animator.SetBool("isWalking", true);
         } else {
             walkVelocity.x = velocity.x;
+            animator.SetBool("isWalking", false);
         }
 
         //Flip sprite if necessary
-        bool flipSprite = (spriteRenderer.flipX ? (h > 0f) : (h < 0f));
+        bool flipSprite = (spriteRenderer.flipX ? (h < 0f) : (h > 0f));
         if (flipSprite) {
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
