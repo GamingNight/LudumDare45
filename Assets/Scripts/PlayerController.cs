@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
     public Rigidbody2D groundToleranceRgbd2D;
+    public SpriteRenderer eyeSpriteRenderer;
 
     private ContactFilter2D contactFilter;
     private RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
@@ -123,10 +124,11 @@ public class PlayerController : MonoBehaviour {
             walkVelocity.x = velocity.x;
         }
 
-        //Flip sprite and ground tolerance child if necessary 
+        //Flip sprites and ground tolerance child if necessary 
         bool flipSprite = (spriteRenderer.flipX ? (h < 0f) : (h > 0f));
         if (flipSprite) {
             spriteRenderer.flipX = !spriteRenderer.flipX;
+            eyeSpriteRenderer.flipX = !eyeSpriteRenderer.flipX;
             BoxCollider2D boxCollider = groundToleranceRgbd2D.GetComponent<BoxCollider2D>();
             boxCollider.offset = new Vector2(-boxCollider.offset.x, boxCollider.offset.y);
         }

@@ -12703,6 +12703,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 5}
   m_EdgeRadius: 0
+--- !u!212 &1783822079 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7257443548556481974, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7041247359921901245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1807172992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15346,10 +15352,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7041247360183873491, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
+        type: 3}
+      propertyPath: eyeSpriteRenderer
+      value: 
+      objectReference: {fileID: 1783822079}
     - target: {fileID: 7041247360183873490, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
         type: 3}
       propertyPath: coinContainer
       value: 
       objectReference: {fileID: 1320009090}
+    - target: {fileID: 7257443548556481974, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2d402313eb1ec47ab41d05ac8c57d2, type: 3}
