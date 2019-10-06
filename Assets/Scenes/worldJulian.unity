@@ -13559,6 +13559,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 753512328}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &753512330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3211089821739640992, guid: 9345b4cf03cf29f479010c4983182299,
+    type: 3}
+  m_PrefabInstance: {fileID: 753512328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753917833
 GameObject:
   m_ObjectHideFlags: 0
@@ -22480,7 +22486,7 @@ MonoBehaviour:
   platformContainer: {fileID: 1896449118}
   peakContainer: {fileID: 439216067}
   mobilePeakContainer: {fileID: 786696944}
-  coinContainer: {fileID: 0}
+  coinContainer: {fileID: 753512330}
   player: {fileID: 279437673}
   debugActivateCoins: 0
 --- !u!1 &1326614791
@@ -35357,7 +35363,7 @@ PrefabInstance:
         type: 3}
       propertyPath: coinContainer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 753512330}
     - target: {fileID: 7257443548556481974, guid: fb2d402313eb1ec47ab41d05ac8c57d2,
         type: 3}
       propertyPath: m_FlipX
