@@ -70,8 +70,8 @@ public class PlayerController : MonoBehaviour {
         if (jumpInputTimer > 0 && grounded && !jump) {
             jump = true;
             jumpInputTimer = 0;
-            Debug.Log("Jump registered");
         }
+
         //Register a jump release (slow down jump)
         slowJump = jumpInputUp && velocity.y > 0;
     }
@@ -135,19 +135,23 @@ public class PlayerController : MonoBehaviour {
 
         //Jump
         if (jump) {
+            animator.SetBool("isJumping", true);
             jumpVelocity.y = jumpTakeOffSpeed - wallReaction.y;
             jump = false;
         } else if (slowJump) {
             jumpVelocity.y = velocity.y * 0.5f;
         } else {
             jumpVelocity.y = velocity.y;
+            if (grounded) {
+                animator.SetBool("isJumping", false);
+            }
         }
 
 
         return jumpVelocity;
     }
 
-    //Compute movement in a 2Dplateformer-friendly way (doesn't use default RigidBody2D behavior)
+    //Compute movement in a 2Dplateformer-friendly way (doesn't use RigidBody2D default behavior)
     private void Move(Vector2 movement, bool yMovement) {
         float distance = movement.magnitude;
 
