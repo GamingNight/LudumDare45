@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EndUINavigation : MonoBehaviour {
@@ -13,12 +14,15 @@ public class EndUINavigation : MonoBehaviour {
     public Font boldFont;
 
     public GameObject gameContainer;
+    public AudioSource menuSelectSound;
 
     private int currentCursorValue;
     private float prevVerticalvalue;
+    private AudioSource menuHoverSound;
 
     void Start() {
         currentCursorValue = 0;
+        menuHoverSound = GetComponent<AudioSource>();
     }
 
     void OnEnable() {
@@ -70,11 +74,23 @@ public class EndUINavigation : MonoBehaviour {
             default:
                 break;
         }
+        if (currentCursorValue != value) {
+            menuHoverSound.Play();
+        }
         currentCursorValue = value;
     }
 
     public void RestartWithNothing() {
 
+        StartCoroutine(RestartWithNothingCoroutine());
+    }
+
+    private IEnumerator RestartWithNothingCoroutine() {
+
+        menuSelectSound.Play();
+        while (menuSelectSound.isPlaying) {
+            yield return new WaitForSeconds(0.1f);
+        }
         gameObject.SetActive(false);
         GameManager.Instance().ResetGame();
         gameContainer.SetActive(true);
