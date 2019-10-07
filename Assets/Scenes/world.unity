@@ -42850,11 +42850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndUI
       objectReference: {fileID: 0}
-    - target: {fileID: 5868171422763779499, guid: 19126867980a66b4b846bc68108590fa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5868171422763779496, guid: 19126867980a66b4b846bc68108590fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42915,11 +42910,6 @@ PrefabInstance:
       propertyPath: gameContainer
       value: 
       objectReference: {fileID: 2024374878}
-    - target: {fileID: 5868171422592493756, guid: 19126867980a66b4b846bc68108590fa,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 80
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19126867980a66b4b846bc68108590fa, type: 3}
 --- !u!4 &1686693558 stripped
