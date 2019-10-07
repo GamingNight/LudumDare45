@@ -1,9 +1,9 @@
 Impératif
 - Faire les graphismes décors
-- Finir level design (en commençant par les plateformes)
 - Trouver un nom au jeu
-- Faire les sons et la musique
-- Faire des beaux menus
+- Rajouter bannière start menu
+- Retirer les plateformes noob
+- Replacer le joueur en bas à gauche de la scène
 
 Pas impératif
 - Orienter animation perso dans son saut
