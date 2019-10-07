@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class QuickSaveCollision : MonoBehaviour
-{
-	private Animator animator;
+public class QuickSaveCollision : MonoBehaviour {
 
-	    void Start() {
+    private Animator animator;
+
+    void Start() {
         animator = gameObject.GetComponent<Animator>();
         SetAnimation(false);
     }
 
     void OnTriggerEnter2D(Collider2D col) {
 
-        if(col.gameObject.tag == "Player") {
+        if (col.gameObject.tag == "Player") {
             col.gameObject.GetComponent<PlayerDeathManager>().QuickSave(transform.position);
             col.gameObject.GetComponent<PlayerDeathManager>().QuickSaveTriggerUpdate(this);
         }

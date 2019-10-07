@@ -2,9 +2,12 @@
 
 public class PlayerDeathManager : MonoBehaviour {
 
+    public GameObject coinContainer;
+    public AudioSource deathSound;
+    public AudioSource saveSound;
+
     private Vector3 lastQuickSavePosition;
     private QuickSaveCollision lastQuickSaveTriggerActivated;
-    public GameObject coinContainer;
 
     void Start() {
         lastQuickSavePosition = transform.position;
@@ -16,6 +19,7 @@ public class PlayerDeathManager : MonoBehaviour {
     }
 
     public void Die() {
+        deathSound.Play();
         GetComponent<PlayerController>().ResetVelocity();
         transform.position = lastQuickSavePosition;
         foreach (Transform child in coinContainer.transform) {
@@ -32,6 +36,7 @@ public class PlayerDeathManager : MonoBehaviour {
     }
 
     public void QuickSave(Vector3 quickSavePosition) {
+
         lastQuickSavePosition = quickSavePosition;
 
         foreach (Transform child in coinContainer.transform) {
@@ -49,11 +54,15 @@ public class PlayerDeathManager : MonoBehaviour {
     }
 
     public void QuickSaveTriggerUpdate(QuickSaveCollision quickSaveTrigger) {
-    	if (lastQuickSaveTriggerActivated != null) {
-    		lastQuickSaveTriggerActivated.SetAnimation(false);
-    	}
-    	lastQuickSaveTriggerActivated = quickSaveTrigger;
-    	lastQuickSaveTriggerActivated.SetAnimation(true);
+        if (lastQuickSaveTriggerActivated != null) {
+            lastQuickSaveTriggerActivated.SetAnimation(false);
+        }
+        if (lastQuickSaveTriggerActivated != quickSaveTrigger) {
+            saveSound.Play();
+        }
+
+        lastQuickSaveTriggerActivated = quickSaveTrigger;
+        lastQuickSaveTriggerActivated.SetAnimation(true);
     }
 
 }

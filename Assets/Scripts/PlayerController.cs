@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour {
     public float gravityMultiplier = 1;
     public Rigidbody2D groundToleranceRgbd2D;
     public SpriteRenderer eyeSpriteRenderer;
-    public AudioSource fallSource;
-    public AudioSource jumpSource;
+    public AudioSource fallSound;
+    public AudioSource jumpSound;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
-    private AudioSource walkSource;
+    private AudioSource walkSound;
     private Animator animator;
 
     private ContactFilter2D contactFilter;
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     private Vector2 velocity;
     private Vector2 wallReaction;
     private bool grounded;
+    private bool prevGrounded;
     private Vector2 groundNormal;
     private bool jump;
     private bool slowJump;
@@ -36,25 +37,25 @@ public class PlayerController : MonoBehaviour {
     //Sound
     private float initWalkvolume;
 
-
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rgbd2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        walkSource = GetComponent<AudioSource>();
+        walkSound = GetComponent<AudioSource>();
 
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         contactFilter.useLayerMask = true;
 
         grounded = true;
+        prevGrounded = true;
         jump = false;
         slowJump = false;
         jumpInputTimer = 0f;
 
         initPosition = transform.position;
 
-        initWalkvolume = walkSource.volume;
+        initWalkvolume = walkSound.volume;
     }
 
     public void ResetPosition() {
@@ -119,6 +120,12 @@ public class PlayerController : MonoBehaviour {
 
         //Apply ground friction if grounded
         ApplyGroundFriction();
+
+        //Play fall sound if just grounded
+        if(grounded && !prevGrounded) {
+            fallSound.Play();
+        }
+        prevGrounded = grounded;
     }
 
     private Vector2 ComputeWalkVelocity() {
@@ -127,10 +134,10 @@ public class PlayerController : MonoBehaviour {
         Vector2 walkVelocity = Vector2.zero;
         if (h != 0) {
             animator.SetBool("isWalking", true);
-            if (!walkSource.isPlaying) {
-                walkSource.pitch = Random.Range(0.9f, 1.1f);
-                walkSource.volume = Random.Range(initWalkvolume - 0.02f, initWalkvolume + 0.02f);
-                walkSource.Play();
+            if (!walkSound.isPlaying && grounded) {
+                walkSound.pitch = Random.Range(0.9f, 1.1f);
+                walkSound.volume = Random.Range(initWalkvolume - 0.02f, initWalkvolume + 0.02f);
+                walkSound.Play();
             }
             walkVelocity.x = h * maxSpeed;
         } else {
@@ -159,6 +166,8 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("isJumping", true);
             jumpVelocity.y = jumpTakeOffSpeed - wallReaction.y;
             jump = false;
+            jumpSound.pitch = Random.Range(0.9f, 1.1f);
+            jumpSound.Play();
         } else if (slowJump) {
             jumpVelocity.y = velocity.y * 0.5f;
         } else {
@@ -232,5 +241,4 @@ public class PlayerController : MonoBehaviour {
         velocity.x = 0;
         jumpInputTimer = 0;
     }
-
 }
