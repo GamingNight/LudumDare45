@@ -48541,5 +48541,13 @@ PrefabInstance:
       propertyPath: coinContainer
       value: 
       objectReference: {fileID: 3211089822336698152}
+    - target: {fileID: 279437675, guid: fb2d402313eb1ec47ab41d05ac8c57d2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e27b9217128f5c4c804fef9f308f009, type: 3}
+    - target: {fileID: 279437675, guid: fb2d402313eb1ec47ab41d05ac8c57d2, type: 3}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2d402313eb1ec47ab41d05ac8c57d2, type: 3}

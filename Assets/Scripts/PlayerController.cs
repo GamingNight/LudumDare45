@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("isWalking", true);
             if (!walkSource.isPlaying) {
                 walkSource.pitch = Random.Range(0.9f, 1.1f);
-                walkSource.volume = Random.Range(initWalkvolume - 0.2f, initWalkvolume + 0.2f);
+                walkSource.volume = Random.Range(initWalkvolume - 0.02f, initWalkvolume + 0.02f);
                 walkSource.Play();
             }
             walkVelocity.x = h * maxSpeed;
