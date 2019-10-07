@@ -12,13 +12,22 @@ public class Coin : MonoBehaviour {
 
     public CoinColor color = CoinColor.BLACK;
 
-    private SpriteRenderer spriteRenderer;
     protected CoinStatus status = CoinStatus.DEACTIVATED;
+
+    private SpriteRenderer spriteRenderer;
+    private AudioSource collectSource;
+
 
     protected void Start() {
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         status = CoinStatus.DEACTIVATED;
+
+        Transform t = transform;
+        while (collectSource == null) {
+            t = t.parent;
+            collectSource = t.GetComponent<AudioSource>();
+        }
     }
 
     protected void Update() {
@@ -28,7 +37,7 @@ public class Coin : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
+    protected void OnTriggerEnter2D(Collider2D col) {
         if (status != CoinStatus.TO_BE_PICKED) {
             return;
         }
@@ -36,6 +45,7 @@ public class Coin : MonoBehaviour {
         if (col.gameObject.tag == "Player") {
             GameManager.Instance().AddCoinValue(color, 1);
             status = CoinStatus.PICKED_UP_NOT_SAVED;
+            collectSource.Play();
         }
     }
 

@@ -8,11 +8,15 @@ public class PlayerController : MonoBehaviour {
     //A memory that allows a slight jump instruction delay when player is not grounded.
     public float jumpInputMemory = 0.1f;
     public float gravityMultiplier = 1;
+    public Rigidbody2D groundToleranceRgbd2D;
+    public SpriteRenderer eyeSpriteRenderer;
+    public AudioSource fallSource;
+    public AudioSource jumpSource;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rgbd2D;
-    public Rigidbody2D groundToleranceRgbd2D;
-    public SpriteRenderer eyeSpriteRenderer;
+    private AudioSource walkSource;
+    private Animator animator;
 
     private ContactFilter2D contactFilter;
     private RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
@@ -29,11 +33,15 @@ public class PlayerController : MonoBehaviour {
     private const float minMoveDistance = 0.001f;
     private const float shellRadius = 0.01f;
 
-    private Animator animator;
+    //Sound
+    private float initWalkvolume;
+
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rgbd2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        walkSource = GetComponent<AudioSource>();
 
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
@@ -44,9 +52,9 @@ public class PlayerController : MonoBehaviour {
         slowJump = false;
         jumpInputTimer = 0f;
 
-        animator = gameObject.GetComponent<Animator>();
-
         initPosition = transform.position;
+
+        initWalkvolume = walkSource.volume;
     }
 
     public void ResetPosition() {
@@ -119,6 +127,11 @@ public class PlayerController : MonoBehaviour {
         Vector2 walkVelocity = Vector2.zero;
         if (h != 0) {
             animator.SetBool("isWalking", true);
+            if (!walkSource.isPlaying) {
+                walkSource.pitch = Random.Range(0.9f, 1.1f);
+                walkSource.volume = Random.Range(initWalkvolume - 0.2f, initWalkvolume + 0.2f);
+                walkSource.Play();
+            }
             walkVelocity.x = h * maxSpeed;
         } else {
             animator.SetBool("isWalking", false);

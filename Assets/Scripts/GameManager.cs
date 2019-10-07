@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
     public GameObject mobilePeakContainer;
     public GameObject coinContainer;
     public GameObject player;
+    public AudioSource musicSource;
 
     public bool debugActivateCoins = false;
 
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour {
             }
         }
         ResetCoinCount();
+        musicSource.Stop();
     }
 
     public int GetCoinCount(Coin.CoinColor color) {

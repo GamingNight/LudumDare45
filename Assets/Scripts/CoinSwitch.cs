@@ -28,4 +28,11 @@ public class CoinSwitch : Coin {
             child.GetComponent<Coin>().Deactivate();
         }
     }
+
+    new void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.tag == "Player" && status == CoinStatus.TO_BE_PICKED && color == CoinColor.BLACK) {
+            GameManager.Instance().musicSource.Play();
+        }
+        base.OnTriggerEnter2D(col);
+    }
 }
