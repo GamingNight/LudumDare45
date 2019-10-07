@@ -12,4 +12,4 @@ Pas impératif
 - Ajouter le temps au score final
 - Ajouter "Restart with something" dans le menu fin
 - Faire un Menu pause
-- Rajouter la pièce jaune, avec effet des plateformes temporaires
+- Rajouter effet des plateformes temporaires (pièces jaunes)
