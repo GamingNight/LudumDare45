@@ -42850,6 +42850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5868171422763779499, guid: 19126867980a66b4b846bc68108590fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5868171422763779496, guid: 19126867980a66b4b846bc68108590fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59757,6 +59762,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1.313
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402963027, guid: c09ed6e54211be74eb2afecd6175b5da, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928704474, guid: c09ed6e54211be74eb2afecd6175b5da, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136231744771276316, guid: c09ed6e54211be74eb2afecd6175b5da,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c09ed6e54211be74eb2afecd6175b5da, type: 3}

@@ -9,6 +9,7 @@ public class EndUINavigation : MonoBehaviour {
     public Text blueCoins;
     public Text yellowCoins;
     public Text restart;
+    public Text restartWith;
     public Text quit;
     public Font lightFont;
     public Font boldFont;
@@ -38,8 +39,8 @@ public class EndUINavigation : MonoBehaviour {
         if (v != 0 && v != prevVerticalvalue) {
             int newCursorValue = currentCursorValue - (int)v;
             if (newCursorValue < 0) {
-                newCursorValue = 1;
-            } else if (newCursorValue > 1) {
+                newCursorValue = 2;
+            } else if (newCursorValue > 2) {
                 newCursorValue = 0;
             }
             FocusCursorOnvalue(newCursorValue);
@@ -53,6 +54,9 @@ public class EndUINavigation : MonoBehaviour {
                     RestartWithNothing();
                     break;
                 case 1:
+                    RestartWithSomething();
+                    break;
+                case 2:
                     Quit();
                     break;
                 default:
@@ -65,10 +69,17 @@ public class EndUINavigation : MonoBehaviour {
         switch (value) {
             case 0:
                 restart.font = boldFont;
+                restartWith.font = lightFont;
                 quit.font = lightFont;
                 break;
             case 1:
                 restart.font = lightFont;
+                restartWith.font = boldFont;
+                quit.font = lightFont;
+                break;
+            case 2:
+                restart.font = lightFont;
+                restartWith.font = lightFont;
                 quit.font = boldFont;
                 break;
             default:
@@ -93,6 +104,22 @@ public class EndUINavigation : MonoBehaviour {
         }
         gameObject.SetActive(false);
         GameManager.Instance().ResetGame();
+        gameContainer.SetActive(true);
+    }
+
+    public void RestartWithSomething()
+    {
+        StartCoroutine(RestartWithSomethingCoroutine());
+    }
+
+    private IEnumerator RestartWithSomethingCoroutine() {
+
+        menuSelectSound.Play();
+        while (menuSelectSound.isPlaying) {
+            yield return new WaitForSeconds(0.1f);
+        }
+        gameObject.SetActive(false);
+        GameManager.Instance().player.transform.position = new Vector3(2.86f, 18.30f, 0);
         gameContainer.SetActive(true);
     }
 
