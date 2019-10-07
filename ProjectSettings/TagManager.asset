@@ -57,3 +57,6 @@ TagManager:
   - name: Front Animals
     uniqueID: 2914967191
     locked: 0
+  - name: Collectibles
+    uniqueID: 2261077951
+    locked: 0

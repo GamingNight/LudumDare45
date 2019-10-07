@@ -1,9 +1,8 @@
 Impératif
-- Faire les graphismes décors
-- Trouver un nom au jeu
 - Rajouter bannière start menu
 - Retirer les plateformes noob
 - Replacer le joueur en bas à gauche de la scène
+- Placer toutes les pièces
 
 Pas impératif
 - Orienter animation perso dans son saut
