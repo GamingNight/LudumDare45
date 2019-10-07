@@ -20,6 +20,7 @@ public class PlayerDeathManager : MonoBehaviour {
 
     public void Die() {
         deathSound.Play();
+        GameManager.Instance().AddOneDepth();
         GetComponent<PlayerController>().ResetVelocity();
         transform.position = lastQuickSavePosition;
         foreach (Transform child in coinContainer.transform) {
