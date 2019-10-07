@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour {
 
-    public GameObject pauseMenu;
+    public GameObject pauseCanvas;
     private bool paused;
     private List<AudioSource> pausedAudioSources;
     void Start() {
@@ -34,7 +34,8 @@ public class PauseManager : MonoBehaviour {
                 pausedAudioSources.Add(a);
             }
         }
-        pauseMenu.SetActive(true);
+        GetComponent<PauseUINavigation>().ResetCursor();
+        pauseCanvas.SetActive(true);
     }
 
     public void ResumeGame() {
@@ -42,6 +43,10 @@ public class PauseManager : MonoBehaviour {
         foreach (AudioSource a in pausedAudioSources) {
             a.UnPause();
         }
-        pauseMenu.SetActive(false);
+        pauseCanvas.SetActive(false);
+    }
+
+    public bool IsPaused() {
+        return paused;
     }
 }

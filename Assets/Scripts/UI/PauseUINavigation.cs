@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PauseUINavigation : MonoBehaviour {
@@ -25,11 +24,18 @@ public class PauseUINavigation : MonoBehaviour {
         pauseManager = GetComponent<PauseManager>();
     }
 
-    void OnEnable() {
+    public void ResetCursor() {
+        resume.font = boldFont;
+        restart.font = lightFont;
+        quit.font = lightFont;
         currentCursorValue = 0;
     }
 
     void Update() {
+
+        if (!pauseManager.IsPaused()) {
+            return;
+        }
         float v = Input.GetAxisRaw("Vertical");
 
         if (v != 0 && v != prevVerticalvalue) {
