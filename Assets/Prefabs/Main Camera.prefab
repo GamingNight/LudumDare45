@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f12f5e95cb9ab24c806e0289a755286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dampTime: 0.2
+  player: {fileID: 0}
+  dampTime: 0.05
   offset: {x: 0, y: 1, z: -10}
   leftRightDownUpBoundaries: {x: -40, y: 43, z: 3, w: 38}

@@ -3,12 +3,11 @@ using UnityEngine.UI;
 
 public class StartUINavigation : MonoBehaviour {
 
-    public Image cursor;
     public Text start;
     public Text quit;
 
-    public Font OpenLight;
-    public Font OpenBold;
+    public Font openLight;
+    public Font openBold;
 
     public GameObject gameContainer;
 
@@ -24,17 +23,13 @@ public class StartUINavigation : MonoBehaviour {
         float v = Input.GetAxisRaw("Vertical");
 
         if (v != 0 && v != prevVerticalvalue) {
-            currentCursorValue -= (int)v;
-            if (currentCursorValue < 0) {
-                currentCursorValue =1;
-                start.font = OpenLight;
-                quit.font = OpenBold;
-            } else if (currentCursorValue > 1) {
-                currentCursorValue = 0;
-                start.font = OpenBold;
-                quit.font = OpenLight;
+            int newCursorValue = currentCursorValue - (int)v;
+            if (newCursorValue < 0) {
+                newCursorValue = 1;
+            } else if (newCursorValue > 1) {
+                newCursorValue = 0;
             }
-
+            FocusCursorOnvalue(newCursorValue);
         }
         prevVerticalvalue = v;
 
@@ -50,6 +45,22 @@ public class StartUINavigation : MonoBehaviour {
                     break;
             }
         }
+    }
+
+    public void FocusCursorOnvalue(int value) {
+        switch (value) {
+            case 0:
+                start.font = openBold;
+                quit.font = openLight;
+                break;
+            case 1:
+                start.font = openLight;
+                quit.font = openBold;
+                break;
+            default:
+                break;
+        }
+        currentCursorValue = value;
     }
 
     public void StartWithNothing() {

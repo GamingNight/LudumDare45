@@ -7,9 +7,10 @@ public class EndUINavigation : MonoBehaviour {
     public Text redCoins;
     public Text blueCoins;
     public Text yellowCoins;
-    public Image cursor;
     public Text restart;
     public Text quit;
+    public Font lightFont;
+    public Font boldFont;
 
     public GameObject gameContainer;
 
@@ -31,14 +32,13 @@ public class EndUINavigation : MonoBehaviour {
         float v = Input.GetAxisRaw("Vertical");
 
         if (v != 0 && v != prevVerticalvalue) {
-            currentCursorValue -= (int)v;
-            if (currentCursorValue < 0) {
-                currentCursorValue = 1;
-            } else if (currentCursorValue > 1) {
-                currentCursorValue = 0;
+            int newCursorValue = currentCursorValue - (int)v;
+            if (newCursorValue < 0) {
+                newCursorValue = 1;
+            } else if (newCursorValue > 1) {
+                newCursorValue = 0;
             }
-
-            FocusCursorOnvalue(currentCursorValue);
+            FocusCursorOnvalue(newCursorValue);
         }
 
         prevVerticalvalue = v;
@@ -60,14 +60,17 @@ public class EndUINavigation : MonoBehaviour {
     public void FocusCursorOnvalue(int value) {
         switch (value) {
             case 0:
-                cursor.rectTransform.position = new Vector3(cursor.rectTransform.position.x, restart.rectTransform.position.y, cursor.rectTransform.position.z);
+                restart.font = boldFont;
+                quit.font = lightFont;
                 break;
             case 1:
-                cursor.rectTransform.position = new Vector3(cursor.rectTransform.position.x, quit.rectTransform.position.y, cursor.rectTransform.position.z);
+                restart.font = lightFont;
+                quit.font = boldFont;
                 break;
             default:
                 break;
         }
+        currentCursorValue = value;
     }
 
     public void RestartWithNothing() {
