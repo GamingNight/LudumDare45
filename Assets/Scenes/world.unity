@@ -970,7 +970,7 @@ PrefabInstance:
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
       propertyPath: maxPosition.y
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
@@ -1372,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49549721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.12, y: 32.727, z: 0}
+  m_LocalPosition: {x: 42.12, y: 34.946003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 996980386}
@@ -1551,11 +1551,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1610,6 +1605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -3332,11 +3332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3391,6 +3386,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -6389,11 +6389,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6448,6 +6443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -8639,11 +8639,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8698,6 +8693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -10982,7 +10982,7 @@ PrefabInstance:
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
       propertyPath: maxPosition.y
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
@@ -11680,11 +11680,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11739,6 +11734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -12349,11 +12349,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12408,6 +12403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -12493,11 +12493,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12552,6 +12547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -14417,11 +14417,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14476,6 +14471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -17187,11 +17187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17246,6 +17241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -19096,7 +19096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987706164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.099, y: 32.737, z: 0}
+  m_LocalPosition: {x: 38.099, y: 34.956, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1362165688}
@@ -20760,6 +20760,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8506905040664015685, guid: cd69d466ded8e6f47b70611b76551d51,
+        type: 3}
+      propertyPath: endUI
+      value: 
+      objectReference: {fileID: 1220338213}
+    - target: {fileID: 8506905040664015685, guid: cd69d466ded8e6f47b70611b76551d51,
+        type: 3}
+      propertyPath: gameContainer
+      value: 
+      objectReference: {fileID: 2024374878}
     - target: {fileID: 8506905040664015687, guid: cd69d466ded8e6f47b70611b76551d51,
         type: 3}
       propertyPath: m_Size.x
@@ -20775,16 +20785,6 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.74
       objectReference: {fileID: 0}
-    - target: {fileID: 8506905040664015685, guid: cd69d466ded8e6f47b70611b76551d51,
-        type: 3}
-      propertyPath: endUI
-      value: 
-      objectReference: {fileID: 1220338213}
-    - target: {fileID: 8506905040664015685, guid: cd69d466ded8e6f47b70611b76551d51,
-        type: 3}
-      propertyPath: gameContainer
-      value: 
-      objectReference: {fileID: 2024374878}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd69d466ded8e6f47b70611b76551d51, type: 3}
 --- !u!1001 &1086299748
@@ -23522,11 +23522,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23581,6 +23576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -23809,7 +23809,7 @@ PrefabInstance:
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
       propertyPath: maxPosition.y
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
@@ -24421,7 +24421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287684289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.17, y: 32.4, z: 0}
+  m_LocalPosition: {x: 46.17, y: 34.619003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 78784846}
@@ -24620,7 +24620,7 @@ PrefabInstance:
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
       propertyPath: maxPosition.y
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
@@ -27707,7 +27707,7 @@ PrefabInstance:
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
       propertyPath: maxPosition.y
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
@@ -28334,11 +28334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28393,6 +28388,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -33931,11 +33931,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33990,6 +33985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -34081,11 +34081,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34140,6 +34135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -34513,11 +34513,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34572,6 +34567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -36764,11 +36764,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36823,6 +36818,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -38204,7 +38204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901075817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.059998, y: 32.729, z: 0}
+  m_LocalPosition: {x: 34.059998, y: 34.948, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 368389156}
@@ -38477,11 +38477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38536,6 +38531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -38920,7 +38920,7 @@ PrefabInstance:
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
       propertyPath: maxPosition.y
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5198334947039907257, guid: 6d56aad950943cc48b8b7608d8fccdec,
         type: 3}
@@ -39572,11 +39572,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39631,6 +39626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
@@ -41070,11 +41070,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1081496459}
     m_Modifications:
-    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
-        type: 3}
-      propertyPath: m_Name
-      value: redCoin (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 358085035737019929, guid: 283421b784e73c74dbb33e949bda8fac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41129,6 +41124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358085035737019908, guid: 283421b784e73c74dbb33e949bda8fac,
+        type: 3}
+      propertyPath: m_Name
+      value: redCoin (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283421b784e73c74dbb33e949bda8fac, type: 3}
