@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     private int redCoinCount;
     private int blueCoinCount;
     private int yellowCoinCount;
+    private int depthCount;
 
     public GameObject platformContainer;
     public GameObject peakContainer;
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour {
         redCoinCount = 0;
         blueCoinCount = 0;
         yellowCoinCount = 0;
+        depthCount = 0;
 
         if (debugActivateCoins) {
             blackCoinCount++;
@@ -46,6 +48,10 @@ public class GameManager : MonoBehaviour {
             blueCoinCount++;
             yellowCoinCount++;
         }
+    }
+
+    public void AddOneDepth() {
+    	depthCount++;
     }
 
     public void AddCoinValue(Coin.CoinColor color, int val) {
