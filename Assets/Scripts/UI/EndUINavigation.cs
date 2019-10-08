@@ -8,6 +8,8 @@ public class EndUINavigation : MonoBehaviour {
     public Text redCoins;
     public Text blueCoins;
     public Text yellowCoins;
+    public Text deathCount;
+    public Text timeCount;
     public Text restart;
     public Text restartWith;
     public Text quit;
@@ -27,10 +29,16 @@ public class EndUINavigation : MonoBehaviour {
     }
 
     void OnEnable() {
-        blackCoins.text = "Black " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLACK) + "/20";
-        redCoins.text = "Red " + GameManager.Instance().GetCoinCount(Coin.CoinColor.RED) + "/20";
-        blueCoins.text = "Blue " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLUE) + "/20";
-        yellowCoins.text = "Yellow " + GameManager.Instance().GetCoinCount(Coin.CoinColor.YELLOW) + "/20";
+        blackCoins.text = "Black: " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLACK) + "/20";
+        redCoins.text = "Red: " + GameManager.Instance().GetCoinCount(Coin.CoinColor.RED) + "/20";
+        blueCoins.text = "Blue: " + GameManager.Instance().GetCoinCount(Coin.CoinColor.BLUE) + "/20";
+        yellowCoins.text = "Yellow: " + GameManager.Instance().GetCoinCount(Coin.CoinColor.YELLOW) + "/20";
+        deathCount.text = "Deaths: " + GameManager.Instance().GetDeathCount();
+        float timer = GameManager.Instance().GetTimer();
+        float minutes = (int)timer / 60;
+        float seconds = (int) timer % 60;
+        int milliseconds = (int)((timer - (minutes * 60) - seconds) * 100);
+        timeCount.text = "Time: " + minutes + ":" + seconds + "." + milliseconds;
     }
 
     void Update() {

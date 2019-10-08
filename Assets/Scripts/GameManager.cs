@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour {
     private int redCoinCount;
     private int blueCoinCount;
     private int yellowCoinCount;
-    private int depthCount;
+    private int deathCount;
+    private float timer;
 
     public GameObject platformContainer;
     public GameObject peakContainer;
@@ -32,15 +33,16 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         Cursor.visible = false;
-        ResetCoinCount();
+        ResetCounters();
     }
 
-    private void ResetCoinCount() {
+    private void ResetCounters() {
         blackCoinCount = 0;
         redCoinCount = 0;
         blueCoinCount = 0;
         yellowCoinCount = 0;
-        depthCount = 0;
+        deathCount = 0;
+        timer = 0;
 
         if (debugActivateCoins) {
             blackCoinCount++;
@@ -50,8 +52,12 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void AddOneDepth() {
-    	depthCount++;
+    public void AddOneDeath() {
+        deathCount++;
+    }
+
+    public void AddToTimer(float t) {
+        timer += t;
     }
 
     public void AddCoinValue(Coin.CoinColor color, int val) {
@@ -122,7 +128,7 @@ public class GameManager : MonoBehaviour {
                 child.GetComponent<Coin>().Activate();
             }
         }
-        ResetCoinCount();
+        ResetCounters();
         musicSource.Stop();
     }
 
@@ -146,5 +152,13 @@ public class GameManager : MonoBehaviour {
                 break;
         }
         return value;
+    }
+
+    public int GetDeathCount() {
+        return deathCount;
+    }
+
+    public float GetTimer() {
+        return timer;
     }
 }

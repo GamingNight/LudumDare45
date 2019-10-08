@@ -24,9 +24,11 @@ public class MobilePeakTrajectory : MonoBehaviour {
     }
 
     void Init() {
-        currentPosition = startPositionPercentage;
+        currentPosition = startPositionPercentage * trajectoryDuration;
         fromMinToStart = startFromMinToStart;
         waitTime = -1;
+        float normPosition = currentPosition / trajectoryDuration;
+        transform.localPosition = Vector2.Lerp(minPosition, maxPosition, normPosition);
     }
 
     void Update() {
